@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function add(a,b)
+    {
+        return a+b;
+    }    
+    console.log(add(2,3));
+
+    var a = 4;
+    var b = ["hello", "world", "4", "goodbye"];
+
+    for (i=0;i<b.length;i++)
+        {
+            console.log(b[i]);
+        }
+
+    var c = new Array();
+    c[0] = "hello";
+    c[1] = "New";
+    c[2] = "Year";
+    c[3] = "2019"
+    c[4] = "good"
+
+    console.log(c.length+ "is the size of the array called c")
+
+    var name = "Sweet Home";
+
+    console.log(name.charAt(3));
+    var newname=name.concat("Alabama");
+    console.log(newname);
+    console.log(name.indexOf("o"));
+    console.log(name.slice(1,4));
+    //starting index is inclusive - ending index is exclusive
+    console.log(name.toUpperCase());
+
+    console.log(newname.trim());
+
+    var name2=new String("sweet"); // string object declaration
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+/*
+
+*/
+
+describe('Chain Locators demo', function(){
+    function Calc(a,b,c)
+    {
+        element(by.model("first")).sendKeys(a);
+        element(by.model("second")).sendKeys(b);
+
+        element.all(by.tagName("option")).each(function(item)
+        {
+            item.getAttribute("value").then(function(values)
+            {
+
+                if (values==c)
+                {
+                    item.click();
+                }
+
+            })
+        })
+
+        element(by.id("gobutton")).click();
+    }
+
+    it('Locators', function(){
+
+
+        browser.get('http://juliemr.github.io/protractor-demo/');
+        //repeater, chain locators, And css for identical tags
+        // when ever u see ng-repeat must be used a repeater
+        Calc(3,5,"MULTIPLICATION");
+        Calc(2,5,"ADDITION");
+
+        //
+        
+        element.all(by.repeater("result in memory")).count().then(function(text){
+
+            console.log(text);
+
+        })
+        element.all(by.repeater("result in memory")).each(function(item)
+        {
+
+            item.element(by.css("td:nth-child(3)")).getText().then(function(text){
+
+                console.log(text);
+
+            })
+
+        })
+
+
+    })
+
+
+})
